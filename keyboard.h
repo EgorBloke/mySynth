@@ -17,15 +17,11 @@
  class Keyboard:public QObject,public QGraphicsItem{
      Q_OBJECT
 
-
-
      Keyboard(QObject *parent = nullptr);
 
   //////variables//////
  protected:
     QVector<Key*> keys;
-
-
 
  };
 

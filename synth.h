@@ -5,6 +5,7 @@
 #include <QKeyEvent>
 #include <QMediaPlayer>
 #include<QStack>
+#include<QMap>
 #include"note.h"
 
 QT_BEGIN_NAMESPACE
@@ -25,13 +26,15 @@ private:
 
 ////variables////
 
-    QVector<QMediaPlayer*> players;     //контейнер для воспроизведения плееров, что будут воспроизводить ноты
+//    QVector<QMediaPlayer*> players;     //контейнер для воспроизведения плееров, что будут воспроизводить ноты
+    QMap<int,QMediaPlayer*> players;
     QStack<QMediaPlayer**> waitingPlayers;      //контейнер, откуда будут браться указатели на плееры воспроизведения новой ноты,
                 //если он не пуст. При окончании воспроизведения ноты, указатель помещается обратно в стэк
     ///////methods////
  protected:
- void setKeyboard();        //установка клавиатуры
- void playNote(const Note&);        //
+    void setPlayers();
+    void setKeyboard();        //установка клавиатуры
+    void playNote(const Note&);        //
 
  QMediaPlayer& getPlayer();     //возвращает очереной свободный плеер
 
@@ -40,5 +43,9 @@ private:
 protected:
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
+
+    /////for testing////
+public:
+    QMediaPlayer * soundTest;
 };
 #endif // SYNTH_H

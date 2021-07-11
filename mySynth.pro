@@ -13,12 +13,14 @@ SOURCES += \
     key.cpp \
     keyboard.cpp \
     main.cpp \
+    mygraphicsview.cpp \
     note.cpp \
     synth.cpp
 
 HEADERS += \
     key.h \
     keyboard.h \
+    mygraphicsview.h \
     note.h \
     synth.h
 
@@ -32,3 +34,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     res.qrc
+
+DISTFILES += \
+    sounds/piano-b_B_major.wav \
+    sounds/piano-bb_A#_major.wav \
+    sounds/piano-c_C_major.wav
