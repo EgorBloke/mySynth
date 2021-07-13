@@ -2,6 +2,7 @@
 #include "ui_synth.h"
 #include<QDebug>
 #include<QDir>
+#include<key.h>
 
 Synth::Synth(QWidget *parent)
     : QMainWindow(parent)
@@ -10,8 +11,9 @@ Synth::Synth(QWidget *parent)
     ui->setupUi(this);
     setKeysValue();
     setScene();     //set the scene into graphic view
-    setKeyboard();  //draw keyboard
+
     setPlayers();   //set the music players
+    setKeyboard();  //draw keyboard
     setVolume(10);
     //qDebug() << QDir::toNativeSeparators(QApplication::applicationDirPath()) ;
 
@@ -20,6 +22,11 @@ Synth::Synth(QWidget *parent)
 Synth::~Synth()
 {
     delete ui;
+}
+
+int Synth::getKeysQaunty()
+{
+    return keysValue.size();
 }
 
 void Synth::setKeysValue()
@@ -37,7 +44,14 @@ void Synth::setKeysValue()
         Qt::Key_Y,
         Qt::Key_7,
         Qt::Key_U,
-        Qt::Key_I
+        Qt::Key_I,
+        Qt::Key_9,
+        Qt::Key_O,
+        Qt::Key_0,
+        Qt::Key_P,
+        91,
+        61,
+        93
     };
 }
 
@@ -79,11 +93,32 @@ void Synth::setPlayers()
    players.insert(Qt::Key_O,new QMediaPlayer());
    players.insert(Qt::Key_0,new QMediaPlayer());
    players.insert(Qt::Key_P,new QMediaPlayer());
+   players.insert(91,new QMediaPlayer());
+   players.insert(61,new QMediaPlayer());
+   players.insert(93,new QMediaPlayer());
 
    //устанавливаем плееру свой сэмпл
    players.find(Qt::Key_Q).value()->setMedia(QUrl("qrc:/sounds/piano-bb_Am_major.wav"));
    players.find(Qt::Key_2).value()->setMedia(QUrl("qrc:/sounds/piano-b_B_major.wav"));
    players.find(Qt::Key_W).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_3).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_E).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_R).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_5).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_T).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_6).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_Y).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_7).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_U).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_I).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_9).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_O).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_0).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(Qt::Key_P).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(91).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(61).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+   players.find(93).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find().value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
 
 }
 void Synth::setKeyboard()
@@ -105,23 +140,44 @@ void Synth::setVolume(const int value)
 void Synth::keyPressEvent(QKeyEvent *event)
 
 {
-    qDebug()<<"key pressed";
+    qDebug()<<"key pressed"<<char(event->key())<<event->key();
     auto p = players.find(event->key());
     if(p!=players.end()){
-        if(p.value()->state()==QMediaPlayer::PlayingState)
-        {
-            p.value()->setPosition(0);
-        }
+
 //        if(p.value()->state()==QMediaPlayer::StoppedState)
 //        {
 //            p.value()->play();
 //        }
-        p.value()->play();
+
+
     }
+    if(keyboard->operator[](event->key())!=keyboard->getBadKey())
+    {
+        if(keyboard->operator[](event->key()).isPressed()==false)
+        {
+            if(p.value()->state()==QMediaPlayer::PlayingState)
+            {
+                p.value()->setPosition(0);
+            }
+            p.value()->play();
+        }
+        keyboard->operator[](event->key()).setPressedStatus(true);
+    }
+    scene->update();
 }
+
 
 void Synth::keyReleaseEvent(QKeyEvent *event)
 {
+    qDebug()<<"key released"<<char(event->key())<<event->key();
+    auto p = players.find(event->key());
+    p.value()->stop();
+    p.value()->setPosition(0);
 
+    if(keyboard->operator[](event->key())!=keyboard->getBadKey())
+    {
+        keyboard->operator[](event->key()).setPressedStatus(false);
+    }
+    scene->update();
 }
 

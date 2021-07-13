@@ -7,7 +7,7 @@
 Keyboard::Keyboard(QVector<int> keysValue, QObject *parent) : QObject(parent)
 {
     this->keysValue=keysValue;
-    keysNumber=12;
+    keysNumber=17;
     setKeys();
 }
 
@@ -39,7 +39,7 @@ void Keyboard::setKeys()
 
 bool Keyboard::isBlack(const int num)
 {
-    int lst=num%11;
+    int lst=num%12;
     return lst==1||lst==3||lst==6||lst==8||lst==10;
 }
 
@@ -51,4 +51,19 @@ QRectF Keyboard::boundingRect() const
 void Keyboard::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 
+}
+
+Key &Keyboard::operator[](int val)
+{
+    for(auto k:keys){
+        if(k->getKey()==val){
+            return *k;
+        }
+    }
+    return badKey;
+}
+
+Key &Keyboard::getBadKey()
+{
+    return this->badKey;
 }

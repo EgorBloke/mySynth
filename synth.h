@@ -21,8 +21,8 @@ class Synth : public QMainWindow
 
 public:
     Synth(QWidget *parent = nullptr);
-
     ~Synth();
+    int getKeysQaunty();
 
 private:
     ////variables////
