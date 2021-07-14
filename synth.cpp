@@ -14,6 +14,7 @@ Synth::Synth(QWidget *parent)
 
     setPlayers();   //set the music players
     setKeyboard();  //draw keyboard
+    setAudioRecorder();
     setVolume(10);
     //qDebug() << QDir::toNativeSeparators(QApplication::applicationDirPath()) ;
 
@@ -128,6 +129,11 @@ void Synth::setKeyboard()
     }
     keyboard = new Keyboard(keysValue, this);
     scene->addItem(keyboard);
+}
+
+void Synth::setAudioRecorder()
+{
+    audiorecorder = new AudioRecorder();
 }
 
 void Synth::setVolume(const int value)

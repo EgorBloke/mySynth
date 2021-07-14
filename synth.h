@@ -8,8 +8,9 @@
 #include<QMap>
 #include<QGraphicsScene>
 
-#include<keyboard.h>
+#include"keyboard.h"
 #include"note.h"
+#include"audioRecord.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Synth; }
@@ -28,7 +29,9 @@ private:
     ////variables////
     Ui::Synth *ui;
     QGraphicsScene * scene{nullptr};     //на ней отрисовывается клавиутара
-    Keyboard * keyboard{nullptr};
+    Keyboard * keyboard{nullptr};       //клава
+    AudioRecorder * audiorecorder;
+
     QVector<int> keysValue;
 
     int SCENE_SIZE_X{780};       //scene dimentions
@@ -42,7 +45,11 @@ private:
     void setScene();
     void setPlayers();
     void setKeyboard();        //установка клавиатуры
+    void setAudioRecorder();
+
+
     void playNote(const Note&);        //
+
     void setVolume(const int);
 
  QMediaPlayer& getPlayer();     //возвращает очереной свободный плеер
