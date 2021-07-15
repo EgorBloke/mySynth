@@ -11,6 +11,7 @@
 #include"keyboard.h"
 #include"note.h"
 #include"audioRecord.h"
+#include"metronome.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Synth; }
@@ -24,13 +25,14 @@ public:
     Synth(QWidget *parent = nullptr);
     ~Synth();
     int getKeysQaunty();
-
+    int getMetroTempValue();
 private:
     ////variables////
     Ui::Synth *ui;
     QGraphicsScene * scene{nullptr};     //на ней отрисовывается клавиутара
     Keyboard * keyboard{nullptr};       //клава
-    AudioRecorder * audiorecorder;
+    AudioRecorder * audioRecorder;
+    Metronome * metronome;
 
     QVector<int> keysValue;
 
@@ -46,7 +48,7 @@ private:
     void setPlayers();
     void setKeyboard();        //установка клавиатуры
     void setAudioRecorder();
-
+    void setMetronome();
 
     void playNote(const Note&);        //
 
@@ -63,5 +65,10 @@ friend class Keyboard;
     /////for testing////
 public:
     QMediaPlayer * soundTest;
+private slots:
+    void on_recordStartBtn_clicked();
+    void on_recordStopBtn_clicked();
+
+    void on_metroBtn_toggled(bool checked);
 };
 #endif // SYNTH_H

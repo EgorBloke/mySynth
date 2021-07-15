@@ -14,6 +14,7 @@ SOURCES += \
     key.cpp \
     keyboard.cpp \
     main.cpp \
+    metronome.cpp \
     mygraphicsview.cpp \
     note.cpp \
     synth.cpp
@@ -22,6 +23,7 @@ HEADERS += \
     audioRecord.h \
     key.h \
     keyboard.h \
+    metronome.h \
     mygraphicsview.h \
     note.h \
     synth.h

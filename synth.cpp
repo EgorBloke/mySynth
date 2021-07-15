@@ -16,6 +16,7 @@ Synth::Synth(QWidget *parent)
     setKeyboard();  //draw keyboard
     setAudioRecorder();
     setVolume(10);
+    setMetronome();
     //qDebug() << QDir::toNativeSeparators(QApplication::applicationDirPath()) ;
 
 }
@@ -28,6 +29,11 @@ Synth::~Synth()
 int Synth::getKeysQaunty()
 {
     return keysValue.size();
+}
+
+int Synth::getMetroTempValue()
+{
+    return this->ui->metronomeSpinBox->value();
 }
 
 void Synth::setKeysValue()
@@ -133,7 +139,12 @@ void Synth::setKeyboard()
 
 void Synth::setAudioRecorder()
 {
-    audiorecorder = new AudioRecorder();
+    audioRecorder = new AudioRecorder();
+}
+
+void Synth::setMetronome()
+{
+    metronome = new Metronome();
 }
 
 void Synth::setVolume(const int value)
@@ -186,4 +197,21 @@ void Synth::keyReleaseEvent(QKeyEvent *event)
     }
     scene->update();
 }
+
+
+void Synth::on_recordStartBtn_clicked()
+{
+    audioRecorder->startRecord();
+}
+
+
+void Synth::on_recordStopBtn_clicked()
+{
+    audioRecorder->stopRecord();
+}
+
+
+
+
+
 

@@ -50,19 +50,6 @@
      <string>PushButton</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="recordSaveBtn">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>10</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
    <widget class="QSpinBox" name="metronomeSpinBox">
     <property name="geometry">
      <rect>
@@ -90,9 +77,9 @@
    <widget class="QPushButton" name="metroBtn">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>210</x>
       <y>10</y>
-      <width>71</width>
+      <width>51</width>
       <height>41</height>
      </rect>
     </property>
