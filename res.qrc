@@ -4,5 +4,12 @@
         <file>sounds/piano-b_B_major.wav</file>
         <file>sounds/piano-c_C_major.wav</file>
         <file>sounds/piano-bb_Am_major.wav</file>
+        <file>img/bgnd.jpg</file>
+        <file>img/rec.jpg</file>
+        <file>img/recStop.png</file>
+        <file>img/288688.png</file>
+        <file>img/png-clipart-tape-recorder-sound-recording-and-reproduction-computer-icons-iphone-voice-recorder-video-recorder-electronics-apple-watch.png</file>
     </qresource>
+    <qresource prefix="/img"/>
+    <qresource lang="eng" prefix="/img"/>
 </RCC>

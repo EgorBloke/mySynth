@@ -1,30 +1,40 @@
 #include"metronome.h"
 
 
-Metronome::Metronome()
+Metronome::Metronome(QObject *parent):QObject(parent)
 {
-    metroPlayer = new QMediaPlayer;
-    metroPlayer->setMedia(QUrl("qrc:/sounds/piano-bb_Am_major.wav"));
-
+    timer = new QTimer(this);
+    player = new QMediaPlayer(this);
+    player->setMedia(QUrl("qrc:/sounds/piano-b_B_major.wav"));
+    QObject::connect(timer,SIGNAL(timeout()),this,SLOT(playBit())); ///FIXIT!!!!
 }
 
 void Metronome::start()
 {
 
-    metroTimer->start(1000*60/temp);
+    timer->start(1000*60/temp);
 }
 
 void Metronome::stop()
 {
-    metroTimer->stop();
+    timer->stop();
 }
 
-void Metronome::setTemp()
+void Metronome::playBit()
 {
-    temp=w->getMetroTempValue();
+    player->setPosition(0);
+    player->play();
 }
+
+void Metronome::setTemp(int temp=100)
+{
+    this->temp=temp;
+}
+
+
+
 
 void Metronome::setVolume(int vol = 20)
 {
-    metroPlayer->setVolume(vol);
+    player->setVolume(vol);
 }

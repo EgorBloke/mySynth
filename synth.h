@@ -16,7 +16,7 @@
 QT_BEGIN_NAMESPACE
 namespace Ui { class Synth; }
 QT_END_NAMESPACE
-
+class Metronome;
 class Synth : public QMainWindow
 {
     Q_OBJECT
@@ -43,6 +43,7 @@ private:
 
     ///////methods////
  protected:
+    void setBackground();
     void setKeysValue();
     void setScene();
     void setPlayers();
@@ -53,6 +54,7 @@ private:
     void playNote(const Note&);        //
 
     void setVolume(const int);
+    void setMetronomeTemp();
 
  QMediaPlayer& getPlayer();     //возвращает очереной свободный плеер
 
@@ -65,10 +67,15 @@ friend class Keyboard;
     /////for testing////
 public:
     QMediaPlayer * soundTest;
+
 private slots:
     void on_recordStartBtn_clicked();
     void on_recordStopBtn_clicked();
 
-    void on_metroBtn_toggled(bool checked);
+    void on_recordPlayBtn_clicked();
+    void on_metroBtnStart_clicked();
+    void on_metroBtnStop_clicked();
+
+    void on_volSlider_actionTriggered(int action);
 };
 #endif // SYNTH_H

@@ -5,6 +5,7 @@
 #include<QBrush>
 #include<QPen>
 #include<QObject>
+#include<QFont>
 
  class Key:public QObject,public QGraphicsItem
  {
@@ -16,9 +17,11 @@ Q_OBJECT
      int key{0};
      QBrush * brush{nullptr};
      QPen * pen{nullptr};
+     QPen * penFont{nullptr};
      double xPos{0};  //позиция вставки
      double yPos{0};
      bool pressed{false};
+     QFont *font{nullptr};
 
 
  public:
@@ -49,11 +52,14 @@ Q_OBJECT
  public:
     WhiteKey(int key, QGraphicsItem *parent = nullptr);
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
+ protected:
+
  };
 
 
 
- class BlackKey:public Key{
+ class BlackKey:public Key
+ {
  public:
     BlackKey(int key, QGraphicsItem *parent = nullptr);    
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
@@ -61,7 +67,8 @@ Q_OBJECT
 
 
 
- class BadKey :public Key{
+ class BadKey :public Key
+ {
  public:
      BadKey(int key, QGraphicsItem *parent = nullptr);
      virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;

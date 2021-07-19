@@ -9,6 +9,8 @@ Synth::Synth(QWidget *parent)
     , ui(new Ui::Synth)
 {
     ui->setupUi(this);
+
+    setBackground();
     setKeysValue();
     setScene();     //set the scene into graphic view
 
@@ -34,6 +36,15 @@ int Synth::getKeysQaunty()
 int Synth::getMetroTempValue()
 {
     return this->ui->metronomeSpinBox->value();
+}
+
+void Synth::setBackground()
+{
+    QPixmap bkgnd(":/img/bgnd.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
 }
 
 void Synth::setKeysValue()
@@ -145,6 +156,7 @@ void Synth::setAudioRecorder()
 void Synth::setMetronome()
 {
     metronome = new Metronome();
+    setMetronomeTemp();
 }
 
 void Synth::setVolume(const int value)
@@ -152,6 +164,11 @@ void Synth::setVolume(const int value)
     for(auto p:players){
         p->setVolume(value);
     }
+}
+
+void Synth::setMetronomeTemp()
+{
+    this->metronome->setTemp(this->ui->metronomeSpinBox->value());
 }
 
 void Synth::keyPressEvent(QKeyEvent *event)
@@ -187,9 +204,9 @@ void Synth::keyPressEvent(QKeyEvent *event)
 void Synth::keyReleaseEvent(QKeyEvent *event)
 {
     qDebug()<<"key released"<<char(event->key())<<event->key();
-    auto p = players.find(event->key());
-    p.value()->stop();
-    p.value()->setPosition(0);
+//    auto p = players.find(event->key());
+//    p.value()->stop();
+//    p.value()->setPosition(0);
 
     if(keyboard->operator[](event->key())!=keyboard->getBadKey())
     {
@@ -214,4 +231,28 @@ void Synth::on_recordStopBtn_clicked()
 
 
 
+
+
+void Synth::on_recordPlayBtn_clicked()
+{
+    audioRecorder->playRecord();
+}
+
+
+void Synth::on_metroBtnStart_clicked()
+{
+    this->metronome->start();
+}
+
+
+void Synth::on_metroBtnStop_clicked()
+{
+    this->metronome->stop();
+}
+
+
+void Synth::on_volSlider_actionTriggered(int action)
+{
+    this->setVolume(ui->volSlider->value());
+}
 

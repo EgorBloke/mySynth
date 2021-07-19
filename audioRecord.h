@@ -4,13 +4,16 @@
 #include<QMediaRecorder>
 #include<QAudioRecorder>
 #include<QAudioEncoderSettings>
+#include<QMediaPlayer>
 #include<QUrl>
 class AudioRecorder{
 public:
     AudioRecorder();
     void startRecord();
     void stopRecord();
+    void playRecord();
 protected:
+    QMediaPlayer * player;
     QAudioRecorder * audioRecorder;
     QAudioEncoderSettings * settings;
 };

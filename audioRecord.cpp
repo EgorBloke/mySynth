@@ -5,6 +5,7 @@ AudioRecorder::AudioRecorder()
 
     audioRecorder = new QAudioRecorder();
     settings = new QAudioEncoderSettings();
+    player = new QMediaPlayer();
     QStringList inputsList = audioRecorder->audioInputs();
     qDebug()<<inputsList;
 
@@ -23,4 +24,15 @@ void AudioRecorder::startRecord()
 void AudioRecorder::stopRecord()
 {
     audioRecorder->stop();
+}
+
+void AudioRecorder::playRecord()
+{
+    player->setMedia(QUrl("C:/myprograms/summerSchool/synth/mySynth/sounds/test.arm.wav"));
+    if(player->state()==QMediaPlayer::PlayingState)
+    {
+        player->setPosition(0);
+
+    }
+    player->play();
 }

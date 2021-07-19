@@ -7,7 +7,7 @@
 Keyboard::Keyboard(QVector<int> keysValue, QObject *parent) : QObject(parent)
 {
     this->keysValue=keysValue;
-    keysNumber=17;
+    keysNumber=20;
     setKeys();
 }
 

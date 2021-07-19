@@ -40,6 +40,11 @@ RESOURCES += \
     res.qrc
 
 DISTFILES += \
+    img/288688.png \
+    img/bgnd.jpg \
+    img/png-clipart-tape-recorder-sound-recording-and-reproduction-computer-icons-iphone-voice-recorder-video-recorder-electronics-apple-watch.png \
+    img/rec.jpg \
+    img/recStop.png \
     sounds/piano-b_B_major.wav \
     sounds/piano-bb_A#_major.wav \
     sounds/piano-c_C_major.wav

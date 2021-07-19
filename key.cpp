@@ -29,9 +29,11 @@ double Key::getWidth()
     return width;
 }
 
-Key::Key(int key, QGraphicsItem *parent) : QGraphicsItem(parent), QObject()
+Key::Key(int key, QGraphicsItem *parent) :  QObject(),QGraphicsItem(parent)
 {
     this->key=key;
+    penFont = new QPen();
+    font = new QFont();
 }
 
 QRectF Key::boundingRect() const
@@ -46,19 +48,30 @@ WhiteKey::WhiteKey(int key, QGraphicsItem *parent) : Key(key, parent)
     height = 320.;
     brush = new QBrush(Qt::black);
     pen = new QPen(Qt::black);
+
 }
 void WhiteKey::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     if(this->isPressed()==false){
         brush->setColor(Qt::white);
+        penFont->setColor(Qt::black);
     } else
     {
         brush->setColor(Qt::green);
+        penFont->setColor(Qt::white);
     }
 
     painter->setBrush(*brush);
     painter->drawRect(xPos,yPos,width,height);
 
+    if(this->isPressed()==false){
+        penFont->setColor(Qt::black);
+    } else
+    {
+       penFont->setColor(Qt::black);
+    }
+    painter->setPen(*penFont);
+    painter->drawText(QRectF(-width/2,yPos,width,height),Qt::AlignRight,QString(char(key)));
 
     Q_UNUSED(option);
     Q_UNUSED(widget);
@@ -71,18 +84,36 @@ BlackKey::BlackKey(int key, QGraphicsItem *parent) : Key(key, parent)
     height = 200.;
     brush = new QBrush(Qt::black);
     pen = new QPen(Qt::black);
+
+
 }
 
 void BlackKey::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     if(this->isPressed()==false){
         brush->setColor(Qt::black);
+
     } else
     {
         brush->setColor(Qt::green);
+
     }
     painter->setBrush(*brush);
     painter->drawRect(-width/2,yPos,width,height);
+    //draw key
+    font->setBold(true);
+    font->setPixelSize(12);
+    painter->setFont(*font);
+
+
+     if(this->isPressed()==false){
+         penFont->setColor(Qt::white);
+     } else
+     {
+        penFont->setColor(Qt::white);
+     }
+     painter->setPen(*penFont);
+     painter->drawText(QRectF(-width/2,yPos,width,height),Qt::AlignCenter,QString(char(key)));
 
     Q_UNUSED(option);
     Q_UNUSED(widget);
