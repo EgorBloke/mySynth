@@ -27,13 +27,8 @@ void Keyboard::setKeys()
             keys[i]->setPos(pos,0);
             keys[i]->setZValue(1);
         }
-
     }
 
-
-//    keys.push_back(new WhiteKey(Qt::Key_Q,this));
-
-//    this->scene()->addItem(keys[0]);
 
 }
 

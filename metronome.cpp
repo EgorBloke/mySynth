@@ -5,7 +5,7 @@ Metronome::Metronome(QObject *parent):QObject(parent)
 {
     timer = new QTimer(this);
     player = new QMediaPlayer(this);
-    player->setMedia(QUrl("qrc:/sounds/piano-b_B_major.wav"));
+    player->setMedia(QUrl("qrc:/sounds/CLAPS 4.wav"));
     QObject::connect(timer,SIGNAL(timeout()),this,SLOT(playBit())); ///FIXIT!!!!
 }
 
@@ -29,6 +29,7 @@ void Metronome::playBit()
 void Metronome::setTemp(int temp=100)
 {
     this->temp=temp;
+
 }
 
 

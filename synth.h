@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QKeyEvent>
 #include <QMediaPlayer>
-#include<QStack>
+
 #include<QMap>
 #include<QGraphicsScene>
 
@@ -50,9 +50,7 @@ private:
     void setKeyboard();        //установка клавиатуры
     void setAudioRecorder();
     void setMetronome();
-
     void playNote(const Note&);        //
-
     void setVolume(const int);
     void setMetronomeTemp();
 
@@ -64,9 +62,7 @@ protected:
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
 friend class Keyboard;
-    /////for testing////
-public:
-    QMediaPlayer * soundTest;
+
 
 private slots:
     void on_recordStartBtn_clicked();
@@ -77,5 +73,10 @@ private slots:
     void on_metroBtnStop_clicked();
 
     void on_volSlider_actionTriggered(int action);
+    /////for testing////
+    void on_metronomeSpinBox_valueChanged(int arg1);
+
+public:
+    QMediaPlayer * soundTest;
 };
 #endif // SYNTH_H

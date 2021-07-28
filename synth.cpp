@@ -16,9 +16,9 @@ Synth::Synth(QWidget *parent)
 
     setPlayers();   //set the music players
     setKeyboard();  //draw keyboard
-    setAudioRecorder();
-    setVolume(10);
+    setAudioRecorder();    
     setMetronome();
+    setVolume(15);
     //qDebug() << QDir::toNativeSeparators(QApplication::applicationDirPath()) ;
 
 }
@@ -115,27 +115,48 @@ void Synth::setPlayers()
    players.insert(61,new QMediaPlayer());
    players.insert(93,new QMediaPlayer());
 
-   //устанавливаем плееру свой сэмпл
-   players.find(Qt::Key_Q).value()->setMedia(QUrl("qrc:/sounds/piano-bb_Am_major.wav"));
-   players.find(Qt::Key_2).value()->setMedia(QUrl("qrc:/sounds/piano-b_B_major.wav"));
-   players.find(Qt::Key_W).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_3).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_E).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_R).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_5).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_T).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_6).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_Y).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_7).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_U).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_I).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_9).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_O).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_0).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(Qt::Key_P).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(91).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(61).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
-   players.find(93).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+      players.find(Qt::Key_Q).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/19-203500__tesabob2001__f-4.mp3"));
+      players.find(Qt::Key_2).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/20-203492__tesabob2001__g4.mp3"));
+      players.find(Qt::Key_W).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/21-203491__tesabob2001__g-4.mp3"));
+      players.find(Qt::Key_3).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/22-203465__tesabob2001__a4.mp3"));
+      players.find(Qt::Key_E).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/23-203460__tesabob2001__a-4.mp3"));
+      players.find(Qt::Key_R).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/24-203462__tesabob2001__b4.mp3"));
+      players.find(Qt::Key_5).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/25-203485__tesabob2001__c5.mp3"));
+      players.find(Qt::Key_T).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/26-203480__tesabob2001__c-5.mp3"));
+      players.find(Qt::Key_6).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/27-203473__tesabob2001__d5.mp3"));
+      players.find(Qt::Key_Y).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/28-203487__tesabob2001__d-5.mp3"));
+      players.find(Qt::Key_7).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/29-203476__tesabob2001__e5.mp3"));
+      players.find(Qt::Key_U).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/30-203489__tesabob2001__f5.mp3"));
+      players.find(Qt::Key_I).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/31-203499__tesabob2001__f-5.mp3"));
+      players.find(Qt::Key_9).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/32-203495__tesabob2001__g5.mp3"));
+      players.find(Qt::Key_O).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/33-203490__tesabob2001__g-5.mp3"));
+      players.find(Qt::Key_0).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/34-203464__tesabob2001__a5.mp3"));
+      players.find(Qt::Key_P).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/35-203459__tesabob2001__a-5.mp3"));
+      players.find(91).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/36-203467__tesabob2001__b5.mp3"));
+      players.find(61).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/37-203484__tesabob2001__c6.mp3"));
+      players.find(93).value()->setMedia(QUrl("qrc:/sounds/12995__tesabob2001__piano-keys-c3-c6/68442__pinkyfinger__piano-d.wav"));
+
+      //устанавливаем плееру свой сэмпл
+//   players.find(Qt::Key_Q).value()->setMedia(QUrl("qrc:/sounds/piano-bb_Am_major.wav"));
+//   players.find(Qt::Key_2).value()->setMedia(QUrl("qrc:/sounds/piano-b_B_major.wav"));
+//   players.find(Qt::Key_W).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_3).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_E).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_R).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_5).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_T).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_6).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_Y).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_7).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_U).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_I).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_9).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_O).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_0).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(Qt::Key_P).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(91).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(61).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
+//   players.find(93).value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
 //   players.find().value()->setMedia(QUrl("qrc:/sounds/piano-c_C_major.wav"));
 
 }
@@ -164,6 +185,7 @@ void Synth::setVolume(const int value)
     for(auto p:players){
         p->setVolume(value);
     }
+    metronome->setVolume(value);
 }
 
 void Synth::setMetronomeTemp()
@@ -175,16 +197,9 @@ void Synth::keyPressEvent(QKeyEvent *event)
 
 {
     qDebug()<<"key pressed"<<char(event->key())<<event->key();
+
     auto p = players.find(event->key());
-    if(p!=players.end()){
 
-//        if(p.value()->state()==QMediaPlayer::StoppedState)
-//        {
-//            p.value()->play();
-//        }
-
-
-    }
     if(keyboard->operator[](event->key())!=keyboard->getBadKey())
     {
         if(keyboard->operator[](event->key()).isPressed()==false)
@@ -192,7 +207,7 @@ void Synth::keyPressEvent(QKeyEvent *event)
             if(p.value()->state()==QMediaPlayer::PlayingState)
             {
                 p.value()->setPosition(0);
-            }
+            }            
             p.value()->play();
         }
         keyboard->operator[](event->key()).setPressedStatus(true);
@@ -225,13 +240,9 @@ void Synth::on_recordStartBtn_clicked()
 void Synth::on_recordStopBtn_clicked()
 {
     audioRecorder->stopRecord();
+    audioRecorder->stopPlaying();
+
 }
-
-
-
-
-
-
 
 void Synth::on_recordPlayBtn_clicked()
 {
@@ -254,5 +265,11 @@ void Synth::on_metroBtnStop_clicked()
 void Synth::on_volSlider_actionTriggered(int action)
 {
     this->setVolume(ui->volSlider->value());
+}
+
+
+void Synth::on_metronomeSpinBox_valueChanged(int arg1)
+{
+    this->metronome->setTemp(this->ui->metronomeSpinBox->value());
 }
 

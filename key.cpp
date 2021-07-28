@@ -36,6 +36,11 @@ Key::Key(int key, QGraphicsItem *parent) :  QObject(),QGraphicsItem(parent)
     font = new QFont();
 }
 
+Key::~Key()
+{
+
+}
+
 QRectF Key::boundingRect() const
 {
     return QRectF(0,0,0,0);
@@ -58,6 +63,7 @@ void WhiteKey::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     } else
     {
         brush->setColor(Qt::green);
+        brush->setColor(QColor(QRgb(0x07A838)));
         penFont->setColor(Qt::white);
     }
 
@@ -70,8 +76,12 @@ void WhiteKey::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     {
        penFont->setColor(Qt::black);
     }
+    font->setBold(true);
+    font->setPixelSize(12);
+    painter->setFont(*font);
     painter->setPen(*penFont);
-    painter->drawText(QRectF(-width/2,yPos,width,height),Qt::AlignRight,QString(char(key)));
+
+    painter->drawText(QRectF(-width/2,yPos+height*0.8,width,height),Qt::AlignRight,QString(char(key)));
 
     Q_UNUSED(option);
     Q_UNUSED(widget);
@@ -95,7 +105,8 @@ void BlackKey::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 
     } else
     {
-        brush->setColor(Qt::green);
+//        brush->setColor(Qt::green);
+        brush->setColor(QColor(QRgb(0x07A838)));
 
     }
     painter->setBrush(*brush);
@@ -113,7 +124,7 @@ void BlackKey::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
         penFont->setColor(Qt::white);
      }
      painter->setPen(*penFont);
-     painter->drawText(QRectF(-width/2,yPos,width,height),Qt::AlignCenter,QString(char(key)));
+     painter->drawText(QRectF(-width/2,yPos+height*0.3,width,height),Qt::AlignCenter,QString(char(key)));
 
     Q_UNUSED(option);
     Q_UNUSED(widget);

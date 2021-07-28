@@ -12,6 +12,7 @@ public:
     void startRecord();
     void stopRecord();
     void playRecord();
+    void stopPlaying();
 protected:
     QMediaPlayer * player;
     QAudioRecorder * audioRecorder;

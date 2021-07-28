@@ -9,7 +9,43 @@
         <file>img/recStop.png</file>
         <file>img/288688.png</file>
         <file>img/png-clipart-tape-recorder-sound-recording-and-reproduction-computer-icons-iphone-voice-recorder-video-recorder-electronics-apple-watch.png</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/4-203470__tesabob2001__e3.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/5-203468__tesabob2001__f3.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/6-203501__tesabob2001__f-3.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/7-203493__tesabob2001__g3.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/8-203488__tesabob2001__g-3.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/9-203458__tesabob2001__a3.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/10-203502__tesabob2001__a-3.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/11-203463__tesabob2001__b3.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/12-203479__tesabob2001__c3.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/13-203478__tesabob2001__c4-middle-c.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/14-203481__tesabob2001__c-4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/15-203472__tesabob2001__d4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/16-203482__tesabob2001__d-4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/17-203471__tesabob2001__e4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/19-203500__tesabob2001__f-4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/20-203492__tesabob2001__g4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/21-203491__tesabob2001__g-4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/22-203465__tesabob2001__a4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/23-203460__tesabob2001__a-4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/24-203462__tesabob2001__b4.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/25-203485__tesabob2001__c5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/26-203480__tesabob2001__c-5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/27-203473__tesabob2001__d5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/28-203487__tesabob2001__d-5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/29-203476__tesabob2001__e5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/30-203489__tesabob2001__f5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/31-203499__tesabob2001__f-5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/32-203495__tesabob2001__g5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/33-203490__tesabob2001__g-5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/34-203464__tesabob2001__a5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/35-203459__tesabob2001__a-5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/36-203467__tesabob2001__b5.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/37-203484__tesabob2001__c6.mp3</file>
+        <file>sounds/12995__tesabob2001__piano-keys-c3-c6/68442__pinkyfinger__piano-d.wav</file>
+        <file>sounds/CLAPS 4.wav</file>
     </qresource>
     <qresource prefix="/img"/>
-    <qresource lang="eng" prefix="/img"/>
+    <qresource prefix="/img" lang="eng"/>
+    <qresource prefix="/sound2"/>
 </RCC>

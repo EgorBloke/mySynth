@@ -41,7 +41,7 @@ Q_OBJECT
      double getWidth();
 
      Key(int key, QGraphicsItem *parent = nullptr);
-
+     virtual ~Key();
      virtual QRectF boundingRect() const override;
      friend class keyboard;
 

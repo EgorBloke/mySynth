@@ -77,7 +77,7 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>6</pointsize>
+        <pointsize>9</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -98,7 +98,7 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string notr="true">START</string>
+       <string notr="true">REC.</string>
       </property>
       <property name="iconSize">
        <size>
@@ -306,6 +306,9 @@ color: grey;
       <property name="singleStep">
        <number>1</number>
       </property>
+      <property name="value">
+       <number>30</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -354,7 +357,7 @@ color: grey;
        <string notr="true">QPushButton {
 font-colo
 	font: 75 10pt &quot;Arial&quot;;
-  background-color: #30DB0C;
+  background-color: #07A838;
   color: black; 
   border: 1px solid gray;
 border-radius:  5px;
@@ -391,7 +394,7 @@ QPushButton:pressed {
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-  background-color: #F80E24;
+  background-color: #B5210A;
   color: white; 
   border: 1px solid gray;
 border-radius:  5px;

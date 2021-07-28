@@ -36,3 +36,8 @@ void AudioRecorder::playRecord()
     }
     player->play();
 }
+
+void AudioRecorder::stopPlaying()
+{
+    player->stop();
+}
